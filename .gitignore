@@ -3,5 +3,5 @@ venv/
 *.swo
 *.swp
 
-messenger/application/settings.py
 messenger/application/local_settings.py
+messenger/.DS_Store
