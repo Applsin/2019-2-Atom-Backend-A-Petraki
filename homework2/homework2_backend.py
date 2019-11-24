@@ -14,11 +14,11 @@ class Game(object):
             choise = input("Введите координаты ячейки для вставки символа " + input_symbol + " ")
             try:
                 choise = int(choise)
-            except:
+            except ValueError:
                 print("Некорректные координаты,попробуйте еще раз")
                 continue  
             if choise >= 1 and choise <= 9:
-                if( str(self._board[choise-1]) not in "xo" ):
+                if(str(self._board[choise-1]) not in "xo"):
                     self._board[choise-1] = input_symbol
                     valid = True
                 else:
@@ -45,7 +45,8 @@ class Game(object):
             counter += 1
             if (counter > 4) & (counter < 9):
                 if self.check_board_state(self._board) != False:
-                    print("Игрок " + str(counter % 2) + " победил!")
+                    print('Игрок  {} победил'.format(str(counter % 2)))
+                    # print("Игрок " + str(counter % 2) + " победил")
                     win = True
                     break        
             if counter == 9:
@@ -53,5 +54,5 @@ class Game(object):
                 break
         self.create_field(self._board)    
 
-game = Game()
-game.main()
+# game = Game()
+# game.main()

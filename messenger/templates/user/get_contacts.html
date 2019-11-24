@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Модели в Django</title>
+</head>
+<body class="container">
+    {% if list.count > 0 %}
+    <h2>Список контактов пользователя {{ contact.user.username }}</h2>
+    <table>
+        <tr>
+            <th>Ник</th>
+            <th>чат</th>
+        </tr>
+        {% for contact in list %}
+        <tr>
+            <td>{{ contact.user.username }}</td>
+            <td>{{ contact.chat }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+</body>
+</html>

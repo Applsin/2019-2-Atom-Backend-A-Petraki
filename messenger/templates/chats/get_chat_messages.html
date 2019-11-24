@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>messages</title>
+</head>
+<body>
+   {% if messages.count > 0 %}
+    <h2>Список сообщений чата</h2>
+    <table>
+        <tr>
+          <th>Id</th>
+          <th>дата</th>
+          <th>отправитель</th>
+          <th>текст</th>
+        </tr>
+        {% for message in messages %}
+        <tr>
+          <td>{{ message.id }}</td>
+          <td>{{ message.added_at }}</td>
+          <td>{{ message.sender.username }}</td>
+          <td>{{ message.content }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+
+</body>
+</html>

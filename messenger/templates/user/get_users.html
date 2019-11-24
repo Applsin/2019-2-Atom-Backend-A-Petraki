@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Модели</title>
+</head>
+<body class="container">
+    {% if users.count > 0 %}
+    <h2>Список пользователей</h2>
+    <table>
+        <tr>
+            <th>ник</th>
+            <th>Имя</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td>{{ user.username }}</td>
+            <td>{{ user.first_name }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+</body>
+</html>

@@ -1,7 +1,10 @@
-from chats.views import chat_list
 from django.urls import path
+from chats.views import *
 
 urlpatterns = [
-        path('', chat_list, name='chat_list'),
-        path('<int:pk>', chat_list, name='chat_list'),
+    path('get_chats/', get_chats),
+    path('create_chat/', create_chat),
+    path('', chat_app),
+    path('chat_messages/', get_chat_messages),
+    path('send_message/', send_message),
 ]
