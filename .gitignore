@@ -2,6 +2,9 @@ venv/
 *.pyc
 *.swo
 *.swp
+*config.py
 
 messenger/application/local_settings.py
 messenger/.DS_Store
+.vscode
+.pytest_cache
